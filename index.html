@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Email Identification Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="intro-screen" class="screen visible">
+            <h1>Phishing Email Identification</h1>
+            <p>Learn to identify phishing emails. Click start to begin!</p>
+            <button class="next-btn" onclick="startGame()">Start Game</button>
+        </div>
+        <div id="game-screen" class="screen hidden">
+            <h1>Level <span id="level">1</span></h1>
+            <p>Time remaining: <span id="timer">10</span> seconds</p>
+            <img id="email-content" src="" alt="Email Content">
+            <button class="legitimate-btn" onclick="checkEmail(true)">Legitimate</button>
+            <button class="phishing-btn" onclick="checkEmail(false)">Phishing</button>
+            <p id="feedback" class="hidden"></p>
+            <button id="next-button" class="next-btn" onclick="nextEmail()">Next Email</button>
+        </div>
+        <div id="end-screen" class="screen hidden">
+            <h1>Game Over</h1>
+            <p>Your Score: <span id="final-score"></span></p>
+            <button class="next-btn" onclick="restartGame()">Restart Game</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
